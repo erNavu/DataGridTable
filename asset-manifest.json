@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/matellio/static/css/main.5978ed2b.css",
+    "main.js": "/matellio/static/js/main.319986e7.js",
+    "static/js/787.ba9f23a3.chunk.js": "/matellio/static/js/787.ba9f23a3.chunk.js",
+    "index.html": "/matellio/index.html",
+    "main.5978ed2b.css.map": "/matellio/static/css/main.5978ed2b.css.map",
+    "main.319986e7.js.map": "/matellio/static/js/main.319986e7.js.map",
+    "787.ba9f23a3.chunk.js.map": "/matellio/static/js/787.ba9f23a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5978ed2b.css",
+    "static/js/main.319986e7.js"
+  ]
+}
