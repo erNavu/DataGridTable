@@ -1,23 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import CustomTable from "./components/customTable";
 
 function App() {
+  const [tableData, setTableData] = useState();
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState();
+
+  // fetching data
+  useEffect(() => {
+    fetch("https://api.github.com/search/repositories?q=facebook/react")
+      .then((res) => res.json())
+      .then((d) => {
+        setData(d.items);
+        setTableData(d.items);
+        setLoading(false);
+      });
+  }, []);
+
+  // defining columns for table
+  const column = [
+    { field: "name", headerName: "Name", width: 700 },
+    { field: "stargazers_count", headerName: "Stars", width: 200 },
+    { field: "forks", headerName: "Forks", width: 200 },
+  ];
+
+  // list of columns to be consider for search.
+  const includeColumns = ["name", "stargazers_count", "forks"];
+
+  // handle change event of search input
+  const handleSearch = (value) => {
+    setSearch(value);
+    filterData(value);
+  };
+
+  // filter records by search text
+  const filterData = (value) => {
+    const lowercasedValue = value?.toLowerCase().trim();
+    if (lowercasedValue === "") setTableData(data);
+    else {
+      const filteredData = data?.filter((item) => {
+        return Object.keys(item).some((key) =>
+          includeColumns.includes(key)
+            ? item[key].toString().toLowerCase().includes(lowercasedValue)
+            : false
+        );
+      });
+      setTableData(filteredData);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="search">
+        <input
+          type="text"
+          value={search}
+          placeholder="search ......."
+          onChange={(e) => handleSearch(e.target.value)}
+        ></input>
+      </div>
+      {loading ? (
+        <p>loading......</p>
+      ) : (
+        <CustomTable data={tableData} columns={column} />
+      )}
     </div>
   );
 }
