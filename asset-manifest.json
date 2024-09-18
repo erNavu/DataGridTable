@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/matellio/static/css/main.5978ed2b.css",
-    "main.js": "/matellio/static/js/main.319986e7.js",
-    "static/js/787.ba9f23a3.chunk.js": "/matellio/static/js/787.ba9f23a3.chunk.js",
-    "index.html": "/matellio/index.html",
-    "main.5978ed2b.css.map": "/matellio/static/css/main.5978ed2b.css.map",
-    "main.319986e7.js.map": "/matellio/static/js/main.319986e7.js.map",
-    "787.ba9f23a3.chunk.js.map": "/matellio/static/js/787.ba9f23a3.chunk.js.map"
+    "main.css": "/DataGridTable/static/css/main.5978ed2b.css",
+    "main.js": "/DataGridTable/static/js/main.868b6716.js",
+    "static/js/787.2ce20d4e.chunk.js": "/DataGridTable/static/js/787.2ce20d4e.chunk.js",
+    "index.html": "/DataGridTable/index.html",
+    "main.5978ed2b.css.map": "/DataGridTable/static/css/main.5978ed2b.css.map",
+    "main.868b6716.js.map": "/DataGridTable/static/js/main.868b6716.js.map",
+    "787.2ce20d4e.chunk.js.map": "/DataGridTable/static/js/787.2ce20d4e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5978ed2b.css",
-    "static/js/main.319986e7.js"
+    "static/js/main.868b6716.js"
   ]
 }
