@@ -1,7 +1,7 @@
 {
-  "name": "matellio",
+  "name": "DataGridTable",
   "version": "0.1.0",
-  "homepage": "https://erNavu.github.io/matellio",
+  "homepage": "https://erNavu.github.io/DataGridTable",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
