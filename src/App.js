@@ -3,20 +3,21 @@ import React, { useEffect, useState } from "react";
 import CustomTable from "./components/customTable";
 
 function App() {
-  const [tableData, setTableData] = useState();
+  const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
-  // fetching data
   useEffect(() => {
-    fetch("https://api.github.com/search/repositories?q=facebook/react")
-      .then((res) => res.json())
-      .then((d) => {
-        setData(d.items);
-        setTableData(d.items);
-        setLoading(false);
-      });
+    // fetching data
+    const fetchData = async () => {
+      const response = await fetch("https://api.github.com/search/repositories?q=facebook/react")
+      const jsonData = await response.json()
+      setData(jsonData.items);
+      setTableData(jsonData.items);
+      setLoading(false);
+    }
+    fetchData()
   }, []);
 
   // defining columns for table
